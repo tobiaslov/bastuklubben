@@ -69,3 +69,46 @@ bastuklubben %>%
 | Bingo-Bosse         |                   29.48079|
 | Tobias              |                   27.69263|
 | Andreas FagerstrÃ¶m |                   24.13151|
+
+``` r
+# Total messages 
+bastuklubben %>% 
+  group_by(user) %>% 
+  summarise(count = n()) %>% 
+  arrange(-count) %>% 
+  kable()
+```
+
+| user                |  count|
+|:--------------------|------:|
+| Tobias              |   7574|
+| Andreas FagerstrÃ¶m |   6874|
+| arian jafari        |   6166|
+| Victor JÃ¤rnberg    |   4101|
+| Axel PÃ¥lsson       |   3422|
+| Jesper              |   2859|
+| Bingo-Bosse         |   1067|
+| Pavarotti           |    679|
+| Jesper S            |    423|
+
+``` r
+#multimedia
+bastuklubben %>% 
+  filter(message == "Not included, change data exporting settings to download.") %>% 
+  group_by(user) %>% 
+  summarise(count = n()) %>% 
+  arrange(-count) %>% 
+  kable()
+```
+
+| user                |  count|
+|:--------------------|------:|
+| Tobias              |    179|
+| arian jafari        |     69|
+| Axel PÃ¥lsson       |     67|
+| Victor JÃ¤rnberg    |     61|
+| Andreas FagerstrÃ¶m |     52|
+| Pavarotti           |     27|
+| Jesper              |     23|
+| Bingo-Bosse         |     12|
+| Jesper S            |      8|

@@ -68,4 +68,20 @@ bastuklubben %>%
   arrange(-mean_length_of_message) %>% 
   kable()
 
+
+# Total messages 
+bastuklubben %>% 
+  group_by(user) %>% 
+  summarise(count = n()) %>% 
+  arrange(-count) %>% 
+  kable()
+
+#multimedia
+bastuklubben %>% 
+  filter(message == "Not included, change data exporting settings to download.") %>% 
+  group_by(user) %>% 
+  summarise(count = n()) %>% 
+  arrange(-count) %>% 
+  kable()
+
 ```
